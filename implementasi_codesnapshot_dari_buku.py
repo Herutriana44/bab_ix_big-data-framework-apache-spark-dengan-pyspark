@@ -1,6 +1,17 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
+# Membuat Spark session
+spark = SparkSession.builder.appName("PySpark Tutorial").config("spark.executor.memory", "2g").config("spark.driver.memory", "2g").getOrCreate()
+
+print(f"Spark version: {spark.version}")
+print(f"Spark UI available at: {spark.sparkContext.uiWebUrl}")
+
+spark.stop()
+
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import *
+
 # 1. Inisialisasi SparkSession 
 spark = SparkSession.builder.appName("Data Analysis").config("spark.executor.memory", "4g").config("spark.driver.memory", "2g").getOrCreate()
 
